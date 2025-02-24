@@ -77,6 +77,28 @@ form {
   border: 0.5px solid #000000;
 }
 
+.load-more-btn {
+  display: none;
+  width: 120px;
+  height: 40px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.04em;
+  color: #fff;
+  background-color: #4e75ff;
+  border: 0.5px solid #4e75ff;
+  padding: 4px 8px;
+  text-align: center;
+  margin: 20px auto;
+}
+
+.load-more-btn:hover {
+  background-color: #6c8cff;
+  border: 0.5px solid #000000;
+}
+
 .loader {
   width: 48px;
   height: 48px;

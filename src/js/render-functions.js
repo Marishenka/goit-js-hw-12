@@ -6,8 +6,8 @@ import 'izitoast/dist/css/iziToast.min.css';
 let lightbox;
 const gallery = document.querySelector('.gallery');
 
-export function showGLR(arrPict) {
-  gallery.innerHTML = '';
+export function showGLR(arrPict, append = false) {
+  if (!append) gallery.innerHTML = '';
 
   const markup = arrPict
     .map(
@@ -19,7 +19,7 @@ export function showGLR(arrPict) {
               alt="${image.tags}"/> 
               <div class="li-text">
                 <table class="table">
-                    <tr><td>Likes</td><td>Views</td><td>Comment</td><td>Downloads</td></tr>
+                    <tr><td>Likes</td><td>Views</td><td>Comments</td><td>Downloads</td></tr>
                     <tr><td>${image.likes}</td><td>${image.views}</td><td>${image.comments}</td><td>${image.downloads}</td></tr>
                 </table>
               </div>
@@ -28,7 +28,7 @@ export function showGLR(arrPict) {
     )
     .join('');
 
-  gallery.insertAdjacentHTML('afterbegin', markup);
+  gallery.insertAdjacentHTML(append ? 'beforeend' : 'afterbegin', markup);
 
   if (!lightbox) {
     lightbox = new SimpleLightbox('.gallery a', {
